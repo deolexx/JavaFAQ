@@ -1,4 +1,4 @@
-package com.deo.javalearning.collectins;
+package com.deo.javalearning.collections;
 
 import java.util.ArrayDeque;
 
