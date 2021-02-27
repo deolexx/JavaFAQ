@@ -10,6 +10,7 @@ public class SemaphoreDemo {
 
 
         new IncThread("A",sem).start();
+
         new DecThread("B",sem).start();
     }
 }
