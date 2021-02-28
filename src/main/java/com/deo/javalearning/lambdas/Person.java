@@ -1,9 +1,12 @@
 package com.deo.javalearning.lambdas;
 
 import lombok.Data;
+import lombok.Getter;
 
 import java.time.LocalDate;
-@Data
+import java.util.List;
+
+
 public class Person {
 
     public enum SEX {
@@ -15,7 +18,36 @@ public class Person {
     String emailAdress;
 
 
-    public void printPerson() {
 
+    public void printPerson() {
+        // ...
     }
+
+    public static void printPersons(
+            List<Person> roster, Predicate tester) {
+        for (Person p : roster) {
+            if (tester.test(p)) {
+                p.printPerson();
+            }
+
+        }}
+    public static void printPersonsWithPredicate(
+            List<Person> roster, Predicate<Person> tester) {
+        for (Person p : roster) {
+            if (tester.test(p)) {
+                p.printPerson();
+            }
+        }
+    }
+
+
+
 }
+
+
+
+interface Predicate<T> {
+    boolean test(T t);
+}
+
+
