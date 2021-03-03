@@ -1,43 +1,49 @@
 package com.deo.javalearning;
 
 import java.util.ArrayList;
-import java.util.function.Consumer;
 
 public class Codewars {
-    public static void main(String[] args) {
 
-        var list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(4);
-        list.add(5);
+    public static String sortMyString(String s) {
+        var ar1=new ArrayList();
+        var ar2=new ArrayList();
+        ar2.add(" ");
 
-        var iter = list.iterator();
+        for(int i =0;i<s.length();i++){
+            if(i%2!=0){
+                ar2.add(s.charAt(i));
+            }
+            else ar1.add(s.charAt(i));
+        }
+        var res = new StringBuilder();
 
-        while (iter.hasNext()) {
-
-            System.out.println((iter.next()));
+        for (var z : ar1) {
+            res.append(z);
+        }
+        for (var z : ar2) {
+            res.append(z);
         }
 
 
-        list.forEach((o) -> {
-            System.out.println(o);
-        });
+        return res.toString();
+    }
 
+    public static void main(String[] args) {
 
-        Consumer<Integer> method = (n) -> { System.out.println(n); };
-
+        System.out.println(sortMyString("Wolfeschlegelsteinhausenbergerdorff"));
     }
 
 
-
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
