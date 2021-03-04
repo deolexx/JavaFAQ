@@ -69,14 +69,32 @@ public class RegularExpressions {
     }
 
 
+    static void appendReplacement(String p,String text){
+        Pattern pat = Pattern.compile(p);
+        Matcher mat = pat.matcher(text);
+        StringBuilder sb = new StringBuilder();
+
+        while (mat.find()) {
+            mat.appendReplacement(sb,"*");
+        }
+        System.out.println(sb.toString());
+
+        System.out.println("---------");
+
+        mat.appendTail(sb);
+        System.out.println(sb.toString());
+    }
+
     public static void main(String[] args) {
-        matches("Java", "Java 9");
-        find("Java", "Java 9");
-        start("a", "Java 9");
-        group("W+", "W WW WWW"); // try diff quantifiers ? * +
-        replaceAll("J.+?n ","Jon Jonathan Mark Bill","Bob ");
-        split("[,. !]+","Hy, check!this,thing.is   !super,,,,,cool");
-        matchesBool("H.y", "Hey");
+//        matches("Java", "Java 9");
+//        find("Java", "Java 9");
+//        start("a", "Java 9");
+//        group("W+", "W WW WWW"); // try diff quantifiers ? * +
+//        replaceAll("J.+?n ","Jon Jonathan Mark Bill","Bob ");
+//        split("[,. !]+","Hy, check!this,thing.is   !super,,,,,cool");
+//        matchesBool("H.y", "Hey");
+        appendReplacement("a*c","acHello aaacWorld ac Meme");
+
 
     }
 
