@@ -10,21 +10,18 @@ public class Codewars {
 
     public static List<Integer> sumConsecutives(List<Integer> s) {
         // your code
-        int sum=1;
-        for (int i = 0; i < s.size(); i++) {
-            if (s.get(i)==s.get(i-1)){
-               sum++;
-
+        List<Integer> s2 = new ArrayList<>();
+        s2.addAll(s);
+     int sum=0;
+        for (int i = 0; i < s2.size()-1; i++) {
+            sum=s2.get(i);
+            while (s2.get(i)==s2.get(i+1)){
+                sum+=s2.get(i+1);
+                s2.remove(i+1);
             }
-            else if (sum>1){
-
-            }
-            else sum=1;
+            s2.set(i,sum);
         }
-
-
-
-        return s;
+        return s2;
     }
 
     public static int[] sumParts(int[] ls) {
@@ -78,7 +75,19 @@ public class Codewars {
 
     public static void main(String[] args) {
 
-        System.out.println(sumParts(new int []{1,2,3,4,5}));
+
+
+       ArrayList<Integer> lis =  new ArrayList<Integer>();
+       lis.add(0,1);
+       lis.add(1,4);
+       lis.add(2,4);
+       lis.add(3,4);
+       lis.add(4,0);
+       lis.add(5,4);
+       lis.add(6,3);
+       lis.add(7,3);
+       lis.add(8,1);
+        System.out.println(sumConsecutives(lis));
 
     }
 
