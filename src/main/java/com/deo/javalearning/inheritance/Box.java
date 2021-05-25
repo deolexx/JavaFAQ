@@ -8,4 +8,8 @@ public class Box {
         this.width = width;
         this.length = length;
     }
+
+    public void say() {
+        System.out.println("Box");
+    }
 }

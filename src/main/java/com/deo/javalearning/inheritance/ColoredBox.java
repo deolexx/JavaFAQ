@@ -7,4 +7,7 @@ public class ColoredBox extends Box {
         super(width, length);
         this.color = color;
     }
+    public void say() {
+        System.out.println("ColoredBox");
+    }
 }
