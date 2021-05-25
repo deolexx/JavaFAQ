@@ -4,9 +4,9 @@ public class InheritanceTest {
 
 
     public static void main(String[] args) {
-        A a = new A();
-        B b = new B();
-        a.sum();
-        b.sum();
+        Box box1 = new Box(2, 2);
+
+        ColoredBox box2 = new ColoredBox(3, 4, "blue");
+
     }
 }
