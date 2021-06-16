@@ -20,6 +20,7 @@ public class EnumDemo {
         for(Apple a : Apple.values()){
             System.out.println(a);
         }
+
         //valueOf() returns the value of  constant  defined with string
         System.out.println(Apple.valueOf("Jonathan"));
 
