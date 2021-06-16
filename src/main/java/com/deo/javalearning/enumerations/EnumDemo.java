@@ -16,6 +16,15 @@ public class EnumDemo {
                 System.out.println("2");
         }
 
+        //values() returns the array contains all the enums of an Apple.class
+        for(Apple a : Apple.values()){
+            System.out.println(a);
+        }
+        //valueOf() returns the value of  constant  defined with string
+        System.out.println(Apple.valueOf("Jonathan"));
+
+
+
     }
 
 }
