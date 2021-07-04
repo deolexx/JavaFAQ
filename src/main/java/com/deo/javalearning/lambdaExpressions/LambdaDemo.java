@@ -2,7 +2,11 @@ package com.deo.javalearning.lambdaExpressions;
 //Simple lambda expression demo
 
 //Functional interface (Single Abstract Method)
-interface MyNumber{
+@FunctionalInterface
+        //marker annotation, not required
+
+
+interface MyNumber {
     double getValue();
 }
 
