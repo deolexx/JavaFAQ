@@ -3,12 +3,14 @@ package com.deo.javalearning.algoritms;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class BubleSort {
+public class BubbleSort {
     public static void main(String[] args) {
         ArrayList<Integer> arr = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
             arr.add(new Random().nextInt(100));
         }
+        System.out.print("Data array: ");
+
         for (Integer x : arr) {
             System.out.print(x + " ");
         }
@@ -16,7 +18,7 @@ public class BubleSort {
 
         sortWithWhile(arr);
         sortWithDoubleFor(arr);
-        printList(arr);
+        printResult(arr);
     }
 
     private static void sortWithDoubleFor(ArrayList<Integer> arr) {
@@ -48,8 +50,8 @@ public class BubleSort {
         }
     }
 
-    private static void printList(ArrayList<Integer> arr) {
-        System.out.println();
+    public static void printResult(ArrayList<Integer> arr) {
+        System.out.print("\n Sorted: ");
         for (Integer x: arr) {
             System.out.print(x+" ");
         }
