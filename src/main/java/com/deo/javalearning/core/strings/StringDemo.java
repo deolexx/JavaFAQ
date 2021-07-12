@@ -1,5 +1,7 @@
 package com.deo.javalearning.core.strings;
 
+import java.util.Locale;
+
 public class StringDemo {
     public static void main(String[] args) {
 
@@ -29,6 +31,20 @@ public class StringDemo {
             String s6 = "a"+"b"+"c"; //"abc"
             //with int
             String s7 = "a"+2; // "a2" string will be created
+
+            String str = "Hello world";
+
+            String s8 = str.toLowerCase(Locale.ROOT); //"hello world"
+            String s9 = str.toUpperCase(Locale.ROOT); //"HELLO WORLD"
+            String s10 = str.replace('l','n');//"henno wornd"
+            String s11 = str.substring(6);//"world"
+            String s12 = str.substring(6,8);//"wo"
+            System.out.println(s12.matches("\\w*"));//true
+
+
+
+
+
 
 
     }
