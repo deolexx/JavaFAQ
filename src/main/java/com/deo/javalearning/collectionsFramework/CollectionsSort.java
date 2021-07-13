@@ -1,6 +1,4 @@
-package com.deo.javalearning.collections;
-
-import com.deo.javalearning.algoritms.BubbleSort;
+package com.deo.javalearning.collectionsFramework;
 
 import java.util.Arrays;
 import java.util.Comparator;

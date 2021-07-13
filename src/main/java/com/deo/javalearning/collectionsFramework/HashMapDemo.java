@@ -1,4 +1,4 @@
-package com.deo.javalearning.collections;
+package com.deo.javalearning.collectionsFramework;
 
 import java.util.*;
 
