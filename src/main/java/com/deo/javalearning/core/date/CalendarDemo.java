@@ -1,4 +1,4 @@
-package com.deo.javalearning.date;
+package com.deo.javalearning.core.date;
 
 import java.util.Calendar;
 

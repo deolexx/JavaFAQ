@@ -1,4 +1,4 @@
-package com.deo.javalearning.varargs;
+package com.deo.javalearning.core.varargs;
 
 public class VarAgrsDemo {
 

@@ -1,4 +1,4 @@
-package com.deo.javalearning.prefixTree;
+package com.deo.javalearning.algoritms.prefixTree;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.deo.javalearning.annotations;
+package com.deo.javalearning.core.annotations;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

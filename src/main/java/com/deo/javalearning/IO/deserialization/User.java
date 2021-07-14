@@ -1,4 +1,4 @@
-package com.deo.javalearning.deserialization;
+package com.deo.javalearning.IO.deserialization;
 
 import java.io.Serializable;
 

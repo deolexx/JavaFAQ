@@ -1,4 +1,4 @@
-package com.deo.javalearning.date;
+package com.deo.javalearning.core.date;
 
 public class TimeDemo {
     public static void main(String[] args) {

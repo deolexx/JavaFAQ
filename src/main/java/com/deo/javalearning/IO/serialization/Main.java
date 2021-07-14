@@ -1,4 +1,4 @@
-package com.deo.javalearning.serialization;
+package com.deo.javalearning.IO.serialization;
 
 import lombok.SneakyThrows;
 
