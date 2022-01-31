@@ -1,4 +1,4 @@
-package com.deo.javalearning.optional;
+package com.deo.javalearning.java8.optional;
 
 import java.util.Optional;
 
