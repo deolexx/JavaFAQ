@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -14,7 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StreamAPIDemoTest {
     List<User> users = new ArrayList<>();
+    List<Book> books = new ArrayList<>();
     User bob, rob, sam, dan, uri, zik;
+    Book book1, book2, book3, book4, book5;
 
     @BeforeEach
     void setUp() {
@@ -31,8 +32,19 @@ class StreamAPIDemoTest {
         users.add(uri);
         zik = new User("Zik", 39, "zik@com");
         users.add(zik);
-    }
 
+        book1 = new Book("War and Peace", "L.Tolstoy", 700, 1864);
+        books.add(book1);
+        book2 = new Book("activities", "Haroon Maldanado", 965, 965);
+        books.add(book2);
+        book3 = new Book("apollo", "Traci Branch", 91285, 91285);
+        books.add(book3);
+        book4 = new Book("sandra", "Valentine Deloera", 82, 82);
+        books.add(book4);
+        book5 = new Book("safari", "Jamye Merrick", 12, 12);
+        books.add(book5);
+
+    }
 
     @Test
     void collectToMap() {
@@ -93,5 +105,12 @@ class StreamAPIDemoTest {
         assertEquals(44, userMap.get("Zik").getAge());
     }
 
+    @Test
+    void map2() {
+        List<Integer> collect = books.stream().map(x -> x.getYear()).filter(x -> x > 1000).collect(Collectors.toList());
+        assertEquals(2,collect.size());
+
+
+    }
 
 }
