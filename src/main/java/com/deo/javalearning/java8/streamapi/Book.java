@@ -1,4 +1,4 @@
-package com.deo.javalearning.java8.StreamAPI;
+package com.deo.javalearning.java8.streamapi;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
