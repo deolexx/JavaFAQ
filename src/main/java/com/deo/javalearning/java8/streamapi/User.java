@@ -1,4 +1,4 @@
-package com.deo.javalearning.java8.StreamAPI;
+package com.deo.javalearning.java8.streamapi;
 
 public class User {
     private String name;
