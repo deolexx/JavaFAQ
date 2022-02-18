@@ -3,11 +3,10 @@ package com.deo.javalearning.java8.streamapi;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -108,8 +107,22 @@ class StreamAPIDemoTest {
     @Test
     void map2() {
         List<Integer> collect = books.stream().map(x -> x.getYear()).filter(x -> x > 1000).collect(Collectors.toList());
-        assertEquals(2,collect.size());
+        assertEquals(2, collect.size());
+    }
 
+    @Test
+    void practice1() {
+        List<String> list = Arrays.asList("A", "B", "C", "D", "E", "F");
+        Stream<String> stream1 = list.stream().peek(System.out::println);
+//        stream1.forEach(System.out::println);
+        Stream<String> stream2 = list.stream().unordered().peek(System.out::println).sorted();
+//        stream2.forEach(System.out::println);
+        Stream<String> stream3 = list.stream().peek(System.out::println).sorted();
+//        stream3.forEach(System.out::println);
+        Stream<String> stream4 = list.stream().unordered().filter(s -> (!Objects.equals(s, "B"))).peek(System.out::println).sorted();
+//        stream4.forEach(System.out::println);
+        Stream<String> stream5 = list.stream().parallel().peek(System.out::println).sequential().distinct();
+        stream5.forEachOrdered(System.out::println);
 
     }
 
