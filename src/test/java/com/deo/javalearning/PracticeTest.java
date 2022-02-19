@@ -82,7 +82,7 @@ class PracticeTest {
 
     @Test
     void fibonacci() {
-        int fib = fib(4);
+        int fib = fib(25);
         assertEquals(3, fib);
     }
 
