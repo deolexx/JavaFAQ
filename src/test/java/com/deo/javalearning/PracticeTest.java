@@ -1,6 +1,6 @@
 package com.deo.javalearning;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -36,7 +36,7 @@ class PracticeTest {
         System.out.println(y);
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     void squareSorted() {
         int[] ints = {-5, -3, 0, 1, 2, 4};
         int[] ints1 = Arrays.stream(ints).map(x -> x * x).sorted().toArray();
@@ -47,20 +47,20 @@ class PracticeTest {
 
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     void reverse() {
         boolean equals = new StringBuffer("hello").reverse().toString().equals("olleh");
         assertTrue(equals);
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     void anagram() {
         String a = Arrays.stream("hello".split("")).sorted().collect(Collectors.joining(""));
         String b = Arrays.stream("olleh".split("")).sorted().collect(Collectors.joining(""));
         assertEquals(a, b);
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     void fizzBuzz() {
         int n = 3;
         ArrayList<String> list = new ArrayList();
@@ -80,7 +80,7 @@ class PracticeTest {
         assertEquals("Fizz", list.get(2));
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     void fibonacci() {
         int fib = fib(4);
         assertEquals(3, fib);
@@ -117,7 +117,7 @@ class PracticeTest {
         assertTrue(result);
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     void sortedTags() {
         var lines = List.of("#Java and #Scala it the best", "#Java and #Scala both are multiplatform", "Why  chose #Ruby or #Scala if you have another languages");
         Stream<Stream<String>> streamStream = lines.stream().map(s -> Arrays.stream(s.split(" ")).filter(s1 -> s1.startsWith("#")));
@@ -139,7 +139,7 @@ class PracticeTest {
         collect.forEach((s, integer) -> System.out.println(s + integer));
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     void reverseArray() {
         int[] array = {1, 3, 2, 5};
         int[] reversed = new int[array.length];
@@ -150,6 +150,35 @@ class PracticeTest {
         }
         Arrays.stream(reversed).forEach(System.out::println);
 
+    }
+    @org.junit.jupiter.api.Test
+    void voidMethodCall(){
+        Test test = new Test("Test",1);
+        changeTest(test);
+        assertEquals("New",test.getString());
+    }
+
+    private class Test {
+        String string;
+        int integer;
+
+        public Test (String string, int integer){
+            this.string = string;
+            this.integer = integer;
+
+        }
+
+        public String getString(){
+            return string;
+        }
+
+        public  void setString(String string){
+            this.string = string;
+        }
+
+    }
+    private void changeTest(Test test){
+        test.setString("New");
     }
 
 }

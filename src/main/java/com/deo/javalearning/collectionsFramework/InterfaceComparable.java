@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 public class InterfaceComparable {
    static class Dog{
-       Integer age;
+     private  Integer age;
        String name;
        String owner;
        String species;
