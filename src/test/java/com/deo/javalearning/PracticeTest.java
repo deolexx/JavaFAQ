@@ -1,6 +1,6 @@
 package com.deo.javalearning;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -9,6 +9,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -166,6 +167,7 @@ class PracticeTest {
             this.string = string;
             this.integer = integer;
 
+
         }
 
         public String getString(){
@@ -180,6 +182,42 @@ class PracticeTest {
     private void changeTest(Test test){
         test.setString("New");
     }
+
+    @org.junit.jupiter.api.Test
+    void missedNumber(){
+        List<Integer> ints = List.of(1, 5, 3, 2, 7, 8, 10, 9,4);
+        int x=0;
+        for (int i = 1; i <= 10; i++) {
+            x=x+i;
+        }
+        int y = 0;
+        for (int i: ints
+             ) {
+            y+=i;
+        }
+        assertEquals(6,x-y);
+
+
+
+    }
+
+    @org.junit.jupiter.api.Test
+    void oddNumbersSum(){
+        List<Integer> ints = List.of(1, 5, 3, 2, 7, 8, 10, 9,4);
+        Integer integer1 = ints.stream().filter(integer -> integer % 2 == 1).reduce(Integer::sum).get();
+        int sum = ints.stream().flatMapToInt(IntStream::of).filter(integer -> integer % 2 == 1).sum();
+        assertEquals(25,integer1);
+        assertEquals(25,sum);
+
+        List<Integer> odds = List.of(1,3,5,7,9);
+        List<Integer> evens = List.of(2,4,6,8,10);
+        List<List<Integer>> listOfLists = List.of(odds,evens);
+        Integer integer3 = listOfLists.stream().flatMap(Collection::stream).reduce((integer, integer2) -> integer + integer2).get();
+        assertEquals(55,integer3);
+
+    }
+
+
 
 }
 

@@ -25,7 +25,9 @@ public class HashMapDemo {
         System.out.println(map.keySet());
         System.out.println(map.values());
         System.out.println(map.entrySet());
-
+        map.put(6,"Moon");
+        map.put(null,"Null");
+        System.out.println(map.entrySet());
 
 
     }

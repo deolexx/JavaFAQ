@@ -1,6 +1,7 @@
 package com.deo.javalearning.java8.optional;
 
 import java.util.Optional;
+import java.util.OptionalInt;
 
 public class OptionalDemo {
     public static void main(String[] args) {
@@ -12,16 +13,27 @@ public class OptionalDemo {
         if (noVal.isPresent()) {
             System.out.println("No object to withdraw");
         }
-        else System.out.println("Object noVal has no value");
+        else
 
         if (hasVal.isPresent()) {
-            System.out.println("Object hasVal contains value: "+hasVal.get());
+
         }
 
         String defaultSt = noVal.orElse("some default string");
         System.out.println(defaultSt);
 
+
+        Integer x = null;
+
+        Optional.ofNullable(x).ifPresent(integer -> System.out.println(integer));
+
+        OptionalInt.of(x).ifPresent(integer -> System.out.println(integer));
+
     }
+
+
+
+
 
 
 
