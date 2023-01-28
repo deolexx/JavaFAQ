@@ -217,6 +217,24 @@ class PracticeTest {
 
     }
 
+    @org.junit.jupiter.api.Test
+    void collectionsTest(){
+        Collection<Integer> ints = List.of(1,12,-3,35);
+        Collection<Integer> sorted = ints.stream().sorted().toList();
+
+        assertEquals(List.of(-3,1,12,35),sorted);
+        Comparator<Integer> comparator = (o1, o2) -> {
+            if(Objects.equals(o1, o2))return 0;
+            else  if(o1<o2) return 1;
+            else  return -1;
+        };
+        Collection<Integer> reversed = ints.stream().sorted((o1, o2) -> {
+            if(Objects.equals(o1, o2))return 0;
+            else  if(o1<o2) return 1;
+            else  return -1;
+        }).toList();
+        assertEquals(List.of(35,12,1,-3),reversed);
+    }
 
 
 }
